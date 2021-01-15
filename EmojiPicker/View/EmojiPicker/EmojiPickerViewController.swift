@@ -19,6 +19,7 @@ open class EmojiPickerViewController: UIViewController {
     open var backgroundColor: UIColor? = UIColor.white.withAlphaComponent(0.5)
     open var darkModeBackgroundColor: UIColor? = UIColor.black.withAlphaComponent(0.5)
     open var isDarkMode = false
+    open var sourceView: UIView?
     open var language: String?
     open var dismissAfterSelected = false
     open var size: CGSize = CGSize(width: 200, height: 300)
@@ -31,7 +32,7 @@ open class EmojiPickerViewController: UIViewController {
         let storyboard = UIStoryboard(name: "EmojiPopover", bundle: Bundle(for: EmojiPopoverViewController.self))
         emojiPopoverVC = storyboard.instantiateInitialViewController() as? EmojiPopoverViewController
         emojiPopoverVC.delegate = self
-        emojiPopoverVC.sourceView = view
+        emojiPopoverVC.sourceView = sourceView
         emojiPopoverVC.sourceRect = sourceRect
         emojiPopoverVC.delegate = self
         emojiPopoverVC.isDarkMode = isDarkMode

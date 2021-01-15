@@ -8,7 +8,7 @@ Emoji picker written on Swift 4.2 by levantAJ
   s.homepage = 'https://github.com/levantAJ/EmojiPicker'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.author = { 'Tai Le' => 'sirlevantai@gmail.com' }
-  s.source = { :git => 'https://github.com/levantAJ/EmojiPicker.git', :tag => s.version.to_s }
+  s.source = { :git => 'https://github.com/tunctugcu/EmojiPicker.git', :tag => s.version.to_s }
   s.ios.deployment_target = '9.0'
   s.swift_version = '4.2'
   s.source_files = 'EmojiPicker/**/*.{swift}'
