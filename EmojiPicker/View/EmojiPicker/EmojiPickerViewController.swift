@@ -35,7 +35,12 @@ open class EmojiPickerViewController: UIViewController {
         emojiPopoverVC.sourceView = sourceView
         emojiPopoverVC.sourceRect = sourceRect
         emojiPopoverVC.delegate = self
-        emojiPopoverVC.isDarkMode = isDarkMode
+        if #available(iOS 13.0, *) {
+            emojiPopoverVC.isDarkMode = UITraitCollection.current.userInterfaceStyle == .dark
+        } else {
+            emojiPopoverVC.isDarkMode = false
+        }
+        
         emojiPopoverVC.language = language
         emojiPopoverVC.emojiFontSize = emojiFontSize
         emojiPopoverVC.dismissAfterSelected = dismissAfterSelected
@@ -45,6 +50,8 @@ open class EmojiPickerViewController: UIViewController {
         emojiPopoverVC.preferredContentSize = size
         present(emojiPopoverVC, animated: true, completion: nil)
     }
+    
+    
 }
 
 // MARK: - EmojiPickerContentViewControllerDelegate
